@@ -26,6 +26,9 @@ TagManager:
   - GameMaster
   - FallBox
   - FinalScore
+  - CannonBall
+  - CannonReload
+  - Cannon
   layers:
   - Default
   - TransparentFX

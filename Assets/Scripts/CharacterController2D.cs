@@ -79,7 +79,7 @@ public class CharacterController2D : MonoBehaviour
             {
                 if (m_Grounded)
                 {
-                   crouch = true;
+                    crouch = true;
                 }
             }
         }
@@ -101,8 +101,8 @@ public class CharacterController2D : MonoBehaviour
                 move *= m_CrouchSpeed;
 
                 // Disable one of the colliders when crouching
-                    if (m_CrouchDisableCollider != null)
-                        m_CrouchDisableCollider.enabled = false;
+                if (m_CrouchDisableCollider != null)
+                    m_CrouchDisableCollider.enabled = false;
             }
             else
             {

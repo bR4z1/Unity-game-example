@@ -10,6 +10,7 @@ public class pickBOX : MonoBehaviour {
     public Transform BoxPoint;
     float throwforce = 14f;
     public LayerMask notThrow;
+    string hitColname;
 
     void Update()
     {
@@ -20,37 +21,54 @@ public class pickBOX : MonoBehaviour {
                 Physics2D.queriesStartInColliders = false;
                 int mask = LayerMask.GetMask("pickBox");
                 hit = Physics2D.Raycast(transform.position, Vector2.right * transform.localScale.x, DISTANCE, mask);
-                if (hit.collider != null && hit.collider.tag == "pickBox")
+                if (hit.collider != null && (hit.collider.tag == "pickBox" || hit.collider.tag == "CannonBall"))
                 {
+                    hitColname = hit.collider.tag;
                     pickBoxThrow = true;
-                    hit.rigidbody.mass = 0.7f;
+                    if (hitColname == "CannonBall")
+                    {
+                        PlayerMovement.runSpeed = 18f; // speed with cannon ball. SLOW
+                    }
                 }
             }
             else if (!Physics2D.OverlapPoint(BoxPoint.position, notThrow))
             {
                 pickBoxThrow = false;
-                Invoke("ChangeMass", 2f);
-                if (hit.collider.gameObject.GetComponent<Rigidbody2D>() != null)
+                if (hit.collider != null)
                 {
-                    hit.collider.gameObject.GetComponent<Rigidbody2D>().AddRelativeForce(transform.right * throwforce * gameObject.transform.localScale.x, ForceMode2D.Impulse);
-                    hit.collider.tag = "pickBoxThrow";
+                    if (hitColname == "CannonBall")
+                    {
+                        PlayerMovement.runSpeed = 40f; // speed with cannon ball
+                    }
+                    Invoke("ChangeMass", 1f);
+                    if (hit.collider.gameObject.GetComponent<Rigidbody2D>() != null)
+                    {
+                        hit.collider.gameObject.GetComponent<Rigidbody2D>().AddRelativeForce(transform.right * throwforce * gameObject.transform.localScale.x, ForceMode2D.Impulse);
+                        hit.collider.tag = "pickBoxThrow";
+                    }
                 }
             }
-
-    
         }
 
         if (pickBoxThrow)
         {
-            hit.collider.gameObject.transform.position = BoxPoint.position;
-            
+            if(hit.collider != null)
+            {
+                hit.collider.gameObject.transform.position = BoxPoint.position;
+            }
+        }
+    }
+    void ChangeMass() // I WANT STARTCOROUNTINE! or not?
+    {
+        if (hitColname != null)
+        {
+            ChangeTag(hitColname);
         }
     }
 
-    void ChangeMass()
+    void ChangeTag(string nameTag)
     {
-        hit.rigidbody.mass = 1f;
-        hit.collider.tag = "pickBox";
+         hit.collider.tag = nameTag;
     }
 
     //void OnDrawGizmos()
