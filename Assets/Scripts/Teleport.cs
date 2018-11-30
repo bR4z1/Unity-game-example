@@ -19,8 +19,16 @@ public class Teleport : MonoBehaviour {
         {
             isActive = true;
         }
-        
     }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.name == "Player")
+        {
+            isActive = false;
+        }
+    }
+
     public void Update()
     {
         if (isActive)

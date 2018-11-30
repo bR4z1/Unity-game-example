@@ -15,9 +15,13 @@ public class Cannon : MonoBehaviour {
     // create possition for Ball where he wait charge
     public Transform BallWaitCharge;
 
+    // reload position in cannon. 
     Collider2D ReloadCollider;
+    public GameObject ReloadObject;
+    bool chargeCannon;
 
-    GameObject go;
+    // Create ball and active UI.slider charge
+    GameObject instantiateBallCannon;
     private bool isActiveCharge;
     public GameObject LoadChargeBall;
     public Slider slider;
@@ -26,7 +30,8 @@ public class Cannon : MonoBehaviour {
 
     void Start () {
         trCannon = GetComponent<Transform>();
-        ReloadCollider = GameObject.FindGameObjectWithTag("CannonReload").GetComponent<Collider2D>();
+        ReloadCollider = ReloadObject.GetComponent<Collider2D>();
+        //ReloadCollider = GameObject.FindGameObjectWithTag("CannonReload").GetComponent<Collider2D>();
     }
 
     private void OnTriggerStay2D(Collider2D col)
@@ -34,6 +39,7 @@ public class Cannon : MonoBehaviour {
         if(col.gameObject.name == "Player" && col.gameObject.transform.position.x < trCannon.position.x)
         {
             isReady = true;
+            chargeCannon = ReloadObject.GetComponent<CannonFire>().ChargeCannon;
             //foreach (ContactPoint2D contact in col.contacts)
             //{
             //    Debug.DrawRay(contact.point, contact.normal * 10, Color.white);
@@ -42,7 +48,8 @@ public class Cannon : MonoBehaviour {
     }
     private void OnTriggerExit2D(Collider2D col)
     {
-        if (col.gameObject.name == "Player" && col.gameObject.transform.position.x < trCannon.position.x)
+        if (col.gameObject.name == "Player" 
+            && col.gameObject.transform.position.x < trCannon.position.x)
         {
             isReady = false;
         }
@@ -50,12 +57,12 @@ public class Cannon : MonoBehaviour {
 
     void Update()
     {
-        if (!DontCreateManyTimeBall && CannonFire.ChargeCannon == true)
+        if (!DontCreateManyTimeBall && chargeCannon == true)
         {
             if (Input.GetKeyDown(KeyCode.F) && isReady)
             {
                 // CREATE ball in another place and wait push UP.F
-                go = Instantiate(BallBullet, BallWaitCharge.position, BallWaitCharge.rotation);
+                instantiateBallCannon = Instantiate(BallBullet, BallWaitCharge.position, BallWaitCharge.rotation);
                 isActiveCharge = true;
                 LoadChargeBall.SetActive(true);
                 DontCreateManyTimeBall = true;
@@ -65,8 +72,8 @@ public class Cannon : MonoBehaviour {
         
         if (isActiveCharge)
         {
-            go.GetComponent<CannonBall>().force += Time.deltaTime;
-            slider.value = go.GetComponent<CannonBall>().force;
+            instantiateBallCannon.GetComponent<CannonBall>().force += Time.deltaTime;
+            slider.value = instantiateBallCannon.GetComponent<CannonBall>().force;
         }
         
 
@@ -88,11 +95,12 @@ public class Cannon : MonoBehaviour {
 
     void Shoot()
     {
-        if (CannonFire.ChargeCannon)
+        if (chargeCannon)
         {
-            go.GetComponent<Transform>().position = CannonLOAD.transform.position;
+            instantiateBallCannon.GetComponent<Transform>().position = CannonLOAD.transform.position;
             DontCreateManyTimeBall = false;
-            CannonFire.ChargeCannon = false;
+            chargeCannon = false;
+            ReloadObject.GetComponent<CannonFire>().ChargeCannon = false;
         }
     }
 

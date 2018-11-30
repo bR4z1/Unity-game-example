@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CannonFire : MonoBehaviour
 {
-    public static bool ChargeCannon = false;
+    public bool ChargeCannon = false;
 
     private void OnTriggerEnter2D(Collider2D col)
     {

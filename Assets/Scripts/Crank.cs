@@ -7,6 +7,7 @@ public class Crank : MonoBehaviour {
     Animator anim;
     private bool isActiveCrank;
     GameObject CrankPlatform;
+    bool isActiveF = true; // player can't move and press F same time
 
     private void Start()
     {
@@ -14,11 +15,20 @@ public class Crank : MonoBehaviour {
         CrankPlatform = GameObject.FindGameObjectWithTag("CrankPlatform");
     }
 
-    private void OnCollisionStay2D(Collision2D col)
+    private void OnTriggerStay2D(Collider2D col)
     {
         if(col.gameObject.name == "Player")
         {
             isActiveCrank = true;
+            isActiveF = true;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D col)
+    {
+        if (col.gameObject.name == "Player")
+        {
+            isActiveF = false;
         }
     }
 
@@ -26,7 +36,7 @@ public class Crank : MonoBehaviour {
     {
         if (isActiveCrank)
         {
-            if (Input.GetKey(KeyCode.F))
+            if (Input.GetKey(KeyCode.F) && isActiveF)
             {
                 anim.SetBool("CrankIsDOWN", true);
                 CrankPlatform.GetComponent<CrankPlatform>().MoveDown(true);
@@ -35,9 +45,7 @@ public class Crank : MonoBehaviour {
             {
                 anim.SetBool("CrankIsDOWN", false);
                 CrankPlatform.GetComponent<CrankPlatform>().MoveDown(false);
-                
             }
         }
-        isActiveCrank = false;
     }
 }
