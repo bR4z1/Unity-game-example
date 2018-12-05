@@ -61,51 +61,139 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\audioBackground.cs" />
-    <Compile Include="Assets\Scripts\BoxController.cs" />
-    <Compile Include="Assets\Scripts\buttonBlock.cs" />
-    <Compile Include="Assets\Scripts\Cannon.cs" />
-    <Compile Include="Assets\Scripts\CannonBall.cs" />
-    <Compile Include="Assets\Scripts\CannonFire.cs" />
-    <Compile Include="Assets\Scripts\CharacterController2D.cs" />
-    <Compile Include="Assets\Scripts\CheckPoints.cs" />
-    <Compile Include="Assets\Scripts\CherryBullet.cs" />
-    <Compile Include="Assets\Scripts\Crank.cs" />
-    <Compile Include="Assets\Scripts\CrankPlatform.cs" />
-    <Compile Include="Assets\Scripts\DestroyBigCrate.cs" />
-    <Compile Include="Assets\Scripts\DestroyObjectByTime.cs" />
-    <Compile Include="Assets\Scripts\DoorActivatePlatform.cs" />
-    <Compile Include="Assets\Scripts\EnemyDamage.cs" />
-    <Compile Include="Assets\Scripts\EnemyDict.cs" />
-    <Compile Include="Assets\Scripts\EnemyHasdamage.cs" />
-    <Compile Include="Assets\Scripts\EnemyMoving.cs" />
-    <Compile Include="Assets\Scripts\FallBox.cs" />
-    <Compile Include="Assets\Scripts\Fallplayer.cs" />
-    <Compile Include="Assets\Scripts\frogJumpMoving.cs" />
-    <Compile Include="Assets\Scripts\GameMaster.cs" />
-    <Compile Include="Assets\Scripts\gem.cs" />
+    <Compile Include="Assets\Photon Unity Networking\Plugins\PhotonNetwork\CustomTypes.cs" />
+    <Compile Include="Assets\Photon Unity Networking\Plugins\PhotonNetwork\Enums.cs" />
+    <Compile Include="Assets\Photon Unity Networking\Plugins\PhotonNetwork\Extensions.cs" />
+    <Compile Include="Assets\Photon Unity Networking\Plugins\PhotonNetwork\FriendInfo.cs" />
+    <Compile Include="Assets\Photon Unity Networking\Plugins\PhotonNetwork\GizmoType.cs" />
+    <Compile Include="Assets\Photon Unity Networking\Plugins\PhotonNetwork\LoadbalancingPeer.cs" />
+    <Compile Include="Assets\Photon Unity Networking\Plugins\PhotonNetwork\NetworkingPeer.cs" />
+    <Compile Include="Assets\Photon Unity Networking\Plugins\PhotonNetwork\PhotonClasses.cs" />
+    <Compile Include="Assets\Photon Unity Networking\Plugins\PhotonNetwork\PhotonHandler.cs" />
+    <Compile Include="Assets\Photon Unity Networking\Plugins\PhotonNetwork\PhotonLagSimulationGui.cs" />
+    <Compile Include="Assets\Photon Unity Networking\Plugins\PhotonNetwork\PhotonNetwork.cs" />
+    <Compile Include="Assets\Photon Unity Networking\Plugins\PhotonNetwork\PhotonPlayer.cs" />
+    <Compile Include="Assets\Photon Unity Networking\Plugins\PhotonNetwork\PhotonStatsGui.cs" />
+    <Compile Include="Assets\Photon Unity Networking\Plugins\PhotonNetwork\PhotonStreamQueue.cs" />
+    <Compile Include="Assets\Photon Unity Networking\Plugins\PhotonNetwork\PhotonView.cs" />
+    <Compile Include="Assets\Photon Unity Networking\Plugins\PhotonNetwork\PingCloudRegions.cs" />
+    <Compile Include="Assets\Photon Unity Networking\Plugins\PhotonNetwork\Room.cs" />
+    <Compile Include="Assets\Photon Unity Networking\Plugins\PhotonNetwork\RoomInfo.cs" />
+    <Compile Include="Assets\Photon Unity Networking\Plugins\PhotonNetwork\RPC.cs" />
+    <Compile Include="Assets\Photon Unity Networking\Plugins\PhotonNetwork\ServerSettings.cs" />
+    <Compile Include="Assets\Photon Unity Networking\Plugins\PhotonNetwork\SocketUdp.cs" />
+    <Compile Include="Assets\Photon Unity Networking\Plugins\PhotonNetwork\SocketWebTcp.cs" />
+    <Compile Include="Assets\Photon Unity Networking\Plugins\PhotonNetwork\Views\PhotonAnimatorView.cs" />
+    <Compile Include="Assets\Photon Unity Networking\Plugins\PhotonNetwork\Views\PhotonRigidbody2DView.cs" />
+    <Compile Include="Assets\Photon Unity Networking\Plugins\PhotonNetwork\Views\PhotonRigidbodyView.cs" />
+    <Compile Include="Assets\Photon Unity Networking\Plugins\PhotonNetwork\Views\PhotonTransformView.cs" />
+    <Compile Include="Assets\Photon Unity Networking\Plugins\PhotonNetwork\Views\PhotonTransformViewPositionControl.cs" />
+    <Compile Include="Assets\Photon Unity Networking\Plugins\PhotonNetwork\Views\PhotonTransformViewPositionModel.cs" />
+    <Compile Include="Assets\Photon Unity Networking\Plugins\PhotonNetwork\Views\PhotonTransformViewRotationControl.cs" />
+    <Compile Include="Assets\Photon Unity Networking\Plugins\PhotonNetwork\Views\PhotonTransformViewRotationModel.cs" />
+    <Compile Include="Assets\Photon Unity Networking\Plugins\PhotonNetwork\Views\PhotonTransformViewScaleControl.cs" />
+    <Compile Include="Assets\Photon Unity Networking\Plugins\PhotonNetwork\Views\PhotonTransformViewScaleModel.cs" />
+    <Compile Include="Assets\Photon Unity Networking\UtilityScripts\ConnectAndJoinRandom.cs" />
+    <Compile Include="Assets\Photon Unity Networking\UtilityScripts\CullArea.cs" />
+    <Compile Include="Assets\Photon Unity Networking\UtilityScripts\InputToEvent.cs" />
+    <Compile Include="Assets\Photon Unity Networking\UtilityScripts\InRoomChat.cs" />
+    <Compile Include="Assets\Photon Unity Networking\UtilityScripts\ManualPhotonViewAllocator.cs" />
+    <Compile Include="Assets\Photon Unity Networking\UtilityScripts\MoveByKeys.cs" />
+    <Compile Include="Assets\Photon Unity Networking\UtilityScripts\NetworkCullingHandler.cs" />
+    <Compile Include="Assets\Photon Unity Networking\UtilityScripts\OnClickDestroy.cs" />
+    <Compile Include="Assets\Photon Unity Networking\UtilityScripts\OnClickInstantiate.cs" />
+    <Compile Include="Assets\Photon Unity Networking\UtilityScripts\OnJoinedInstantiate.cs" />
+    <Compile Include="Assets\Photon Unity Networking\UtilityScripts\OnStartDelete.cs" />
+    <Compile Include="Assets\Photon Unity Networking\UtilityScripts\PhotonPlayer\PlayerRoomIndexing.cs" />
+    <Compile Include="Assets\Photon Unity Networking\UtilityScripts\PickupItem.cs" />
+    <Compile Include="Assets\Photon Unity Networking\UtilityScripts\PickupItemSimple.cs" />
+    <Compile Include="Assets\Photon Unity Networking\UtilityScripts\PickupItemSyncer.cs" />
+    <Compile Include="Assets\Photon Unity Networking\UtilityScripts\PointedAtGameObjectInfo.cs" />
+    <Compile Include="Assets\Photon Unity Networking\UtilityScripts\PunPlayerScores.cs" />
+    <Compile Include="Assets\Photon Unity Networking\UtilityScripts\PunTeams.cs" />
+    <Compile Include="Assets\Photon Unity Networking\UtilityScripts\PunTurnManager.cs" />
+    <Compile Include="Assets\Photon Unity Networking\UtilityScripts\QuitOnEscapeOrBack.cs" />
+    <Compile Include="Assets\Photon Unity Networking\UtilityScripts\ShowStatusWhenConnecting.cs" />
+    <Compile Include="Assets\Photon Unity Networking\UtilityScripts\SmoothSyncMovement.cs" />
+    <Compile Include="Assets\Photon Unity Networking\UtilityScripts\SupportLogger.cs" />
+    <Compile Include="Assets\Photon Unity Networking\UtilityScripts\TimeKeeper.cs" />
+    <Compile Include="Assets\Photon Unity Networking\UtilityScripts\UI\ButtonInsideScrollList.cs" />
+    <Compile Include="Assets\Photon Unity Networking\UtilityScripts\UI\TextButtonTransition.cs" />
+    <Compile Include="Assets\Photon Unity Networking\UtilityScripts\UI\TextToggleIsOnTransition.cs" />
+    <Compile Include="Assets\PhotonChatApi\ChatChannel.cs" />
+    <Compile Include="Assets\PhotonChatApi\ChatClient.cs" />
+    <Compile Include="Assets\PhotonChatApi\ChatDisconnectCause.cs" />
+    <Compile Include="Assets\PhotonChatApi\ChatEventCode.cs" />
+    <Compile Include="Assets\PhotonChatApi\ChatOperationCode.cs" />
+    <Compile Include="Assets\PhotonChatApi\ChatParameterCode.cs" />
+    <Compile Include="Assets\PhotonChatApi\ChatPeer.cs" />
+    <Compile Include="Assets\PhotonChatApi\ChatState.cs" />
+    <Compile Include="Assets\PhotonChatApi\ChatUserStatus.cs" />
+    <Compile Include="Assets\PhotonChatApi\IChatClientListener.cs" />
     <Compile Include="Assets\Scripts\Health\HealthBar.cs" />
     <Compile Include="Assets\Scripts\Health\HealthBarTester.cs" />
     <Compile Include="Assets\Scripts\Health\PlayerHealth.cs" />
     <Compile Include="Assets\Scripts\Health\Rules.cs" />
-    <Compile Include="Assets\Scripts\MainMenu.cs" />
-    <Compile Include="Assets\Scripts\optioningame.cs" />
-    <Compile Include="Assets\Scripts\PauseMenu.cs" />
-    <Compile Include="Assets\Scripts\Pickaxe.cs" />
-    <Compile Include="Assets\Scripts\pickBOX.cs" />
-    <Compile Include="Assets\Scripts\PickBoxChangelayerAndTag.cs" />
-    <Compile Include="Assets\Scripts\PickUpCherry.cs" />
-    <Compile Include="Assets\Scripts\PlayerMovement.cs" />
-    <Compile Include="Assets\Scripts\positionText.cs" />
-    <Compile Include="Assets\Scripts\Score.cs" />
-    <Compile Include="Assets\Scripts\SettingsMenu.cs" />
-    <Compile Include="Assets\Scripts\Shooting.cs" />
-    <Compile Include="Assets\Scripts\SpaceBrick.cs" />
-    <Compile Include="Assets\Scripts\SpaceMovingInWall.cs" />
-    <Compile Include="Assets\Scripts\Teleport.cs" />
-    <Compile Include="Assets\Scripts\TextBoxManager.cs" />
-    <Compile Include="Assets\Scripts\TextImporter.cs" />
-    <Compile Include="Assets\Scripts\triggerControll.cs" />
+    <Compile Include="Assets\Scripts\MainScene\audioBackground.cs" />
+    <Compile Include="Assets\Scripts\MainScene\BoxController.cs" />
+    <Compile Include="Assets\Scripts\MainScene\buttonBlock.cs" />
+    <Compile Include="Assets\Scripts\MainScene\Cannon.cs" />
+    <Compile Include="Assets\Scripts\MainScene\CannonBall.cs" />
+    <Compile Include="Assets\Scripts\MainScene\CannonFire.cs" />
+    <Compile Include="Assets\Scripts\MainScene\CharacterController2D.cs" />
+    <Compile Include="Assets\Scripts\MainScene\CheckPoints.cs" />
+    <Compile Include="Assets\Scripts\MainScene\CherryBullet.cs" />
+    <Compile Include="Assets\Scripts\MainScene\Crank.cs" />
+    <Compile Include="Assets\Scripts\MainScene\CrankPlatform.cs" />
+    <Compile Include="Assets\Scripts\MainScene\DestroyBigCrate.cs" />
+    <Compile Include="Assets\Scripts\MainScene\DestroyObjectByTime.cs" />
+    <Compile Include="Assets\Scripts\MainScene\DoorActivatePlatform.cs" />
+    <Compile Include="Assets\Scripts\MainScene\EnemyDamage.cs" />
+    <Compile Include="Assets\Scripts\MainScene\EnemyDict.cs" />
+    <Compile Include="Assets\Scripts\MainScene\EnemyHasdamage.cs" />
+    <Compile Include="Assets\Scripts\MainScene\EnemyMoving.cs" />
+    <Compile Include="Assets\Scripts\MainScene\FallBox.cs" />
+    <Compile Include="Assets\Scripts\MainScene\Fallplayer.cs" />
+    <Compile Include="Assets\Scripts\MainScene\frogJumpMoving.cs" />
+    <Compile Include="Assets\Scripts\MainScene\GameMaster.cs" />
+    <Compile Include="Assets\Scripts\MainScene\gem.cs" />
+    <Compile Include="Assets\Scripts\MainScene\MainMenu.cs" />
+    <Compile Include="Assets\Scripts\MainScene\optioningame.cs" />
+    <Compile Include="Assets\Scripts\MainScene\PauseMenu.cs" />
+    <Compile Include="Assets\Scripts\MainScene\Pickaxe.cs" />
+    <Compile Include="Assets\Scripts\MainScene\pickBOX.cs" />
+    <Compile Include="Assets\Scripts\MainScene\PickBoxChangelayerAndTag.cs" />
+    <Compile Include="Assets\Scripts\MainScene\PickUpCherry.cs" />
+    <Compile Include="Assets\Scripts\MainScene\PlayerMovement.cs" />
+    <Compile Include="Assets\Scripts\MainScene\positionText.cs" />
+    <Compile Include="Assets\Scripts\MainScene\Score.cs" />
+    <Compile Include="Assets\Scripts\MainScene\SettingsMenu.cs" />
+    <Compile Include="Assets\Scripts\MainScene\Shooting.cs" />
+    <Compile Include="Assets\Scripts\MainScene\SpaceBrick.cs" />
+    <Compile Include="Assets\Scripts\MainScene\SpaceMovingInWall.cs" />
+    <Compile Include="Assets\Scripts\MainScene\Teleport.cs" />
+    <Compile Include="Assets\Scripts\MainScene\TextBoxManager.cs" />
+    <Compile Include="Assets\Scripts\MainScene\TextImporter.cs" />
+    <Compile Include="Assets\Scripts\MainScene\triggerControll.cs" />
+    <Compile Include="Assets\Scripts\Multi-i-don't-know-whatisWrong\PhotonButtons.cs" />
+    <Compile Include="Assets\Scripts\Multi-i-don't-know-whatisWrong\PhotonConnect.cs" />
+    <Compile Include="Assets\Scripts\Multi-i-don't-know-whatisWrong\photonHandler.cs" />
+    <Compile Include="Assets\Scripts\Multi-i-don't-know-whatisWrong\plMoveMultiPlayer.cs" />
+    <Compile Include="Assets\Scripts\MultiVer0.1\CreateRoom\CreateRoom.cs" />
+    <Compile Include="Assets\Scripts\MultiVer0.1\CurrentRoom\CurrentRoomCanvas.cs" />
+    <Compile Include="Assets\Scripts\MultiVer0.1\CurrentRoom\PlayerLayoutGroup.cs" />
+    <Compile Include="Assets\Scripts\MultiVer0.1\CurrentRoom\PlayerListing.cs" />
+    <Compile Include="Assets\Scripts\MultiVer0.1\Extra\LeaveCurrentMatch.cs" />
+    <Compile Include="Assets\Scripts\MultiVer0.1\Generic\DDOL.cs" />
+    <Compile Include="Assets\Scripts\MultiVer0.1\Lobby\LobbyCanvas.cs" />
+    <Compile Include="Assets\Scripts\MultiVer0.1\Lobby\RoomLayoutGroup.cs" />
+    <Compile Include="Assets\Scripts\MultiVer0.1\Lobby\RoomListing.cs" />
+    <Compile Include="Assets\Scripts\MultiVer0.1\MainCanvasManager.cs" />
+    <Compile Include="Assets\Scripts\MultiVer0.1\Networks\LobbyNetwork.cs" />
+    <Compile Include="Assets\Scripts\MultiVer0.1\Networks\PlayerNetwork.cs" />
+    <Compile Include="Assets\Scripts\MultiVer0.1\PlayerManagement.cs" />
+    <Compile Include="Assets\Scripts\MultiVer0.1\PlayerMovementMulti.cs" />
+    <Compile Include="Assets\Scripts\MultiVer0.1\ToxicArea.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01_UGUI.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark02.cs" />
@@ -141,6 +229,7 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\WarpTextExample.cs" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface-Mobile.shader" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
+    <None Include="Assets\Photon Unity Networking\link.xml" />
     <None Include="Assets\Text\example.txt" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro_Properties.cginc" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Bitmap-Custom-Atlas.shader" />
@@ -155,11 +244,13 @@
     <None Include="Assets\TextMesh Pro\Examples &amp; Extras\Fonts\LiberationSans - OFL.txt" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro_Surface.cginc" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile Overlay.shader" />
+    <None Include="Assets\Photon Unity Networking\readme.txt" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Bitmap.shader" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro.cginc" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF.shader" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile.shader" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Sprite.shader" />
+    <None Include="Assets\Photon Unity Networking\changelog.txt" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface.shader" />
     <Reference Include="Cinemachine">
       <HintPath>D:/2D example game/3/Unity-game-example/Library/ScriptAssemblies/Cinemachine.dll</HintPath>
@@ -395,6 +486,12 @@
     <Reference Include="UnityEngine.SpatialTracking">
       <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnitySpatialTracking/RuntimeEditor/UnityEngine.SpatialTracking.dll</HintPath>
     </Reference>
+    <Reference Include="Photon3Unity3D">
+      <HintPath>D:/2D example game/3/Unity-game-example/Assets/Plugins/Photon3Unity3D.dll</HintPath>
+    </Reference>
+    <Reference Include="websocket-sharp">
+      <HintPath>D:/2D example game/3/Unity-game-example/Assets/Plugins/WebSocket/websocket-sharp.dll</HintPath>
+    </Reference>
     <Reference Include="UnityEngine.Analytics">
       <HintPath>C:/Users/braze/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.analytics@2.0.16/UnityEngine.Analytics.dll</HintPath>
     </Reference>
@@ -428,6 +525,12 @@
     <Reference Include="Boo.Lang">
       <HintPath>C:/Program Files/Unity/Editor/Data/MonoBleedingEdge/lib/mono/unity/Boo.Lang.dll</HintPath>
     </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
+      <Project>{5C782DCB-EA81-AD95-D59A-66AE3FF1457E}</Project>
+      <Name>Assembly-CSharp-firstpass</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />
