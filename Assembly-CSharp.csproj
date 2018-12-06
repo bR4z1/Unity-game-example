@@ -164,8 +164,10 @@
     <Compile Include="Assets\Scripts\MainScene\pickBOX.cs" />
     <Compile Include="Assets\Scripts\MainScene\PickBoxChangelayerAndTag.cs" />
     <Compile Include="Assets\Scripts\MainScene\PickUpCherry.cs" />
+    <Compile Include="Assets\Scripts\MainScene\PlayerData.cs" />
     <Compile Include="Assets\Scripts\MainScene\PlayerMovement.cs" />
     <Compile Include="Assets\Scripts\MainScene\positionText.cs" />
+    <Compile Include="Assets\Scripts\MainScene\SaveSystem.cs" />
     <Compile Include="Assets\Scripts\MainScene\Score.cs" />
     <Compile Include="Assets\Scripts\MainScene\SettingsMenu.cs" />
     <Compile Include="Assets\Scripts\MainScene\Shooting.cs" />
