@@ -20,6 +20,7 @@ public class PlayerLayoutGroup : MonoBehaviour {
     // called by photon whenever the master client is swithced
     private void OnMasterClientSwitched(PhotonPlayer newMasterClient)
     {
+        // name don't change if next time field is empty
         PhotonNetwork.LeaveRoom();
     }
 

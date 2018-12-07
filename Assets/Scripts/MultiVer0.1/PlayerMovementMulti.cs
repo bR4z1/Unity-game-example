@@ -13,13 +13,31 @@ public class PlayerMovementMulti : Photon.MonoBehaviour {
     GameObject textGO;
     Text speed;
 
+    // Camera
+    public GameObject playerCamera;
+    GameObject mCam;
+
+    // NickName
+    public TextMesh PlayerName;
+    float posYnick;
+    float posYplayer;
+
     private void Awake()
     {
         PhotonView = GetComponent<PhotonView>();
         textGO = GameObject.FindGameObjectWithTag("TextSpeed");
         speed = textGO.GetComponent<Text>();
         speed.text = "";
-
+        if (PhotonView.isMine)
+        {
+            mCam = GameObject.FindGameObjectWithTag("MainCamera");
+            mCam.SetActive(false);
+            playerCamera.SetActive(true);
+        }
+        posYnick = PlayerName.GetComponent<Transform>().position.y;
+        posYplayer = gameObject.GetComponent<Transform>().position.y;
+        posYnick = posYplayer + 2.3f;
+        PlayerName.text = PhotonView.owner.NickName;
     }
 
     // Update is called once per frame
@@ -67,7 +85,7 @@ public class PlayerMovementMulti : Photon.MonoBehaviour {
         gameObject.GetComponent<Rigidbody2D>().velocity = movement * moveSpeed;
 
         //var move = new Vector3(vertical, 0);
-        speed.text = gameObject.GetComponent<Rigidbody2D>().velocity.ToString();
+        speed.text = gameObject.GetComponent<Rigidbody2D>().velocity.ToString()+"         HEALTH "+Health.ToString();
         //transform.position += move * moveSpeed * Time.deltaTime;
         //transform.Translate(new Vector3(horizontal, vertical) * moveSpeed);
     }

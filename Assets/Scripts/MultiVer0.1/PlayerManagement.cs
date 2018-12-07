@@ -22,6 +22,7 @@ public class PlayerManagement : MonoBehaviour {
         {
             PlayerStats.Add(new PlayerStats(photonPlayer, 30));
         }
+        PlayerStats.Add(new PlayerStats(photonPlayer, 30));
     }
 
     public void ModifyHealth(PhotonPlayer photonPlayer, int value)

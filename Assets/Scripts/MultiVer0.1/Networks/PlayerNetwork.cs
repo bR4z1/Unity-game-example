@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class PlayerNetwork : MonoBehaviour {
@@ -13,16 +14,28 @@ public class PlayerNetwork : MonoBehaviour {
 
     private PlayerMovementMulti CurrentPlayer;
 
+    public InputField NickNameField;
+
     private void Awake()
     {
         Instance = this;
-        PlayerName = "Name#" + Random.Range(1000, 9999);
+        PlayerName = "Name#" + Random.Range(1, 99999);
         PhotonView = GetComponent<PhotonView>();
 
         PhotonNetwork.sendRate = 60;
         PhotonNetwork.sendRateOnSerialize = 50;
 
         SceneManager.sceneLoaded += OnSceneFinishedLoading;
+    }
+
+    private void Update()
+    {
+        //UpdateNickName  
+        if (NickNameField.text.Length > 0)
+        {
+            PlayerName = NickNameField.text;
+            PhotonNetwork.player.NickName = PlayerName;
+        }
     }
 
     private void OnSceneFinishedLoading(Scene scene, LoadSceneMode mode)

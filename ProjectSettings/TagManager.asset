@@ -30,6 +30,7 @@ TagManager:
   - CannonReload
   - Cannon
   - TextSpeed
+  - PlayerMultiGame
   layers:
   - Default
   - TransparentFX
